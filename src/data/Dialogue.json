@@ -1,0 +1,34 @@
+{
+    "TestEvent": [
+        {
+            "speaker": "DummyTest",
+            "lines": [
+                "Hi!",
+                "This is akward..."
+            ],
+            "sprite": "DebugImage"
+        },
+        {
+            "Speaker": "DummyTest",
+            "lines": [
+                "Uhm...",
+                "Guess the system is finally working...!"
+            ],
+            "Lsprite": "DebugImage",
+            "Rsprite": "DebugImage2",
+            "Fsprite": "DebugImage3"
+        }
+    ],
+    "AnotherEvent": [
+        {
+            "speaker": "DummyTest",
+            "lines": [
+                "So... this is working?",
+                "Great."
+            ],
+            "Lsprite": "DebugImage",
+            "Rsprite": "DebugImage2",
+            "Fsprite": "DebugImage3"
+        }
+    ]
+}

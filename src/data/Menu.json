@@ -1,0 +1,49 @@
+{
+    "MainMenu": {
+        "x": 128,
+        "y": 192,
+        "w": 16,
+
+        "Orientation": 0,
+        "BackgroundImage": "/assets/Backgrounds/MainScreen.png",
+
+        "Text": ["New game", "Load game", "Options"],
+        "Actions": [
+            {"Function": "NewGame", "Args": [null]},
+            {"Function": "SetMenu", "Args": ["SelectSaveSlot"]},
+            {"Function": "SetMenu", "Args": ["OptionsMenu"]}
+        ]
+    },
+    "SelectSaveSlot": {
+        "x": 128,
+        "y": 192,
+        "w": 16,
+
+        "Orientation": 0,
+        "BackgroundImage": "/assets/Backgrounds/MainScreen.png",
+
+        "Text": ["Back", "Slot 1", "Slot 2", "Slot 3"],
+        "Actions": [
+            {"Function": "SetMenu", "Args": ["MainMenu"]},
+            {"Function": "LoadGame", "Args": [0]},
+            {"Function": "LoadGame", "Args": [1]},
+            {"Function": "LoadGame", "Args": [2]}
+        ]
+    },
+    "OptionsMenu": {
+        "x": 128,
+        "y": 192,
+        "w": 16,
+
+        "Orientation": 0,
+        "BackgroundImage": "/assets/Backgrounds/MainScreen.png",
+
+        "Text": ["Back","Game", "CRT", "Sound"],
+        "Actions": [
+            {"Function": "SetMenu", "Args": ["MainMenu"]},
+            {"Function": "SetMenu", "Args": ["GameOptions"]},
+            {"Function": "SetMenu", "Args": ["CRTOptions"]},
+            {"Function": "SetMenu", "Args": ["SoundOptions"]}
+        ]
+    }
+}
