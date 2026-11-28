@@ -240,5 +240,35 @@ export async function DrawDungeon() {
         );
     } catch (error) {
         console.error("DungeonDrawer:", error);
+
+    }
+
+    try {
+        const images = await LoadWallImages();
+
+        // Ignore an older render if the player moved while textures were loading.
+        if (currentVersion !== drawVersion) return;
+
+        const canvas = document.createElement("canvas");
+        canvas.width = mainCanvas.width;
+        canvas.height = mainCanvas.height;
+
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+            console.error("DungeonDrawer: could not create a 2D context.");
+            return;
+        }
+
+        for (const wallID of RootWalls) {
+            DrawBranch(ctx, wallID, dungeonData, images, dungeonData.dir);
+        }
+
+        // Replace the previous dungeon image with the completed composite.
+        MainScene.dungeon.length = 0;
+        MainScene.dungeon.push(
+            new sprite(canvas, 0, 0, null, null, true, "DungeonView")
+        );
+    } catch (error) {
+        console.error("DungeonDrawer:", error);
     }
 }

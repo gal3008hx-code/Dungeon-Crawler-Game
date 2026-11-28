@@ -17,8 +17,8 @@ function UpdateLogic() {
 
 function Render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    MainScene.draw_dungeon(ctx);
     MainScene.draw_scene(ctx);
+    console.log(MainScene.dungeon);
     DrawCRT();
 }
 

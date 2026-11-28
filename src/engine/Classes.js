@@ -47,13 +47,13 @@ export class scene {
         this.objects.length = 0;
     }
 
-    draw_dungeon(ctx) {
-        for (i = 0; i < this.dungeon.length; i++) {
-            this.dungeon[i].draw(ctx);
-        }
-    }
 
     draw_scene(ctx) {
+        if (!this.dungeon.length) {
+            for (let i = 0; i < this.dungeon.length; i++) {
+                this.dungeon[i].draw(ctx);
+            }
+        }
         for (let i = 0; i < this.objects.length; i++) {
             this.objects[i].draw(ctx);
         }
@@ -89,6 +89,7 @@ export class sprite {
         );
     }
 }
+
 
 export class TextBox {
     constructor(txts, x, y, width, v, name) {
